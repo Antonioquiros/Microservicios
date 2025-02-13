@@ -18,4 +18,4 @@ def home():
     return "Microservicio 1 en funcionamiento", 200
 
 if __name__ == '__main__':
-    app1.run(port=5000, debug=True)
+    app1.run(port=5000)
