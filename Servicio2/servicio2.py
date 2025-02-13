@@ -7,7 +7,7 @@ app2 = Flask(__name__)
 def get_meteo(municipioid):
     url = f"https://www.el-tiempo.net/api/json/v2/provincias/23/municipios/{municipioid}"
     response = requests.get(url)
-
+    
     if response.status_code != 200:
         return jsonify({"error": "Municipio no encontrado"}), 404
 
