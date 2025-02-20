@@ -2,10 +2,17 @@ from flask import Flask, jsonify
 import json
 import os
 
-app3 = Flask(__name__)
+from flask import Flask, jsonify
+import json
+import os
 
-MUNICIPIO_JSON_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "../municipio.json"))
+MUNICIPIO_JSON_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "../Servicio1/municipio.json"))
 DEMO_JSON_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "demo.json"))
+
+print (MUNICIPIO_JSON_PATH)
+print (DEMO_JSON_PATH)
+
+app3 = Flask(__name__)
 
 @app3.route('/<int:municipioid>/demo', methods=['GET'])
 def get_demo(municipioid):

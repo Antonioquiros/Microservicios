@@ -2,15 +2,16 @@ from flask import Flask, jsonify
 import json
 import os
 
-app1 = Flask(__name__)
+MUNICIPIO_JSON_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "../Servicio1/municipio.json"))
 
-# Ruta del archivo JSON
-JSON_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "../municipio.json"))
+print (MUNICIPIO_JSON_PATH)
+
+app1 = Flask(__name__)
 
 @app1.route('/<int:municipioid>/geo', methods=['GET'])
 def get_geo(municipioid):
     try:
-        with open(JSON_PATH, 'r', encoding='utf-8') as f:
+        with open(MUNICIPIO_JSON_PATH, 'r', encoding='utf-8') as f:
             data = json.load(f)
 
         # Buscar el municipio por ID
