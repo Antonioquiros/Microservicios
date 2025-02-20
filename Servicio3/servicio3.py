@@ -10,6 +10,10 @@ DEMO_JSON_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "demo.j
 @app3.route('/<int:municipioid>/demo', methods=['GET'])
 def get_demo(municipioid):
     try:
+        # Validar que el ID sea 23006
+        if municipioid != 23006:
+            return jsonify({"error": "Municipio no autorizado"}), 403
+
         # Cargar datos de municipio.json
         with open(MUNICIPIO_JSON_PATH, 'r', encoding='utf-8') as f:
             municipios = json.load(f)
@@ -18,7 +22,7 @@ def get_demo(municipioid):
         with open(DEMO_JSON_PATH, 'r', encoding='utf-8') as f:
             demos = json.load(f)
 
-        # Devolver ambos JSON sin filtrar
+        # Devolver ambos JSON
         result = {
             "municipios": municipios,
             "demo": demos
@@ -33,3 +37,4 @@ def get_demo(municipioid):
 
 if __name__ == '__main__':
     app3.run(port=5002)
+
