@@ -4,7 +4,7 @@ import os
 
 app3 = Flask(__name__)
 
-MUNICIPIO_JSON_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "municipio.json"))
+MUNICIPIO_JSON_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "../municipio.json"))
 DEMO_JSON_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "demo.json"))
 
 @app3.route('/<int:municipioid>/demo', methods=['GET'])
