@@ -12,7 +12,7 @@ def get_demo(municipioid):
     try:
         # Validar que el ID sea 23006
         if municipioid != 23006:
-            return jsonify({"error": "Municipio no autorizado"}), 403
+            return jsonify({"error": "Municipio no encontrado"}), 404
 
         # Cargar datos de municipio.json
         with open(MUNICIPIO_JSON_PATH, 'r', encoding='utf-8') as f:
