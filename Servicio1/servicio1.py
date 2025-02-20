@@ -2,7 +2,7 @@ from flask import Flask, jsonify
 import json
 import os
 
-MUNICIPIO_JSON_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "../Servicio1/municipio.json"))
+MUNICIPIO_JSON_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "municipio.json"))
 
 print (MUNICIPIO_JSON_PATH)
 
