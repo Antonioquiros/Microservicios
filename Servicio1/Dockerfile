@@ -13,7 +13,7 @@ COPY municipio.json .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Exponer el puerto del servicio
-EXPOSE 5001
+EXPOSE 5000
 
 # Ejecutar el servicio
 CMD ["python", "app.py"]
